@@ -1,0 +1,24 @@
+{
+  "name": "flashkart",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm run dev -w @flashkart/api",
+    "dev:web": "npm run dev -w @flashkart/web",
+    "build": "npm run build -w @flashkart/api && npm run build -w @flashkart/web",
+    "seed": "npm run seed -w @flashkart/api",
+    "infra:up": "docker compose up -d",
+    "infra:down": "docker compose down"
+  },
+  "devDependencies": {
+    "concurrently": "8.2.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

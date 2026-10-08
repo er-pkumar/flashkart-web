@@ -1,0 +1,248 @@
+:root {
+  --bg: #0f1115;
+  --surface: #181c23;
+  --border: #272d38;
+  --text: #e8eaf0;
+  --muted: #949cad;
+  --accent: #ff5a1f;
+  --ok: #33c481;
+  --err: #ff6b6b;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.masthead h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.masthead h1::after {
+  content: '⚡';
+  margin-left: 6px;
+}
+
+.user {
+  color: var(--muted);
+  font-size: 13px;
+  font-family: ui-monospace, monospace;
+}
+
+h2 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 28px 0 12px;
+}
+
+.notice {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 14px;
+}
+
+.notice.error {
+  border-color: #5a2a2a;
+  color: var(--err);
+}
+
+.notice.info {
+  border-color: #255340;
+  color: var(--ok);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: start;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.price {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.stock small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.bar {
+  height: 5px;
+  border-radius: 99px;
+  background: #22262f;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+.card footer {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+button,
+select {
+  font: inherit;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #22262f;
+  color: var(--text);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.card footer button {
+  flex: 1;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a0d05;
+  font-weight: 600;
+}
+
+button:disabled,
+select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--muted);
+}
+
+.reservation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #241a14;
+}
+
+.reservation .timer {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.reservation .actions {
+  display: flex;
+  gap: 8px;
+}
+
+.reservation .actions button:last-child {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a0d05;
+  font-weight: 600;
+}
+
+.orders {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.orders li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.meta {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.countdown {
+  color: var(--accent);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown.ended {
+  color: var(--muted);
+}
